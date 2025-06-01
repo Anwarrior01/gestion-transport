@@ -12,7 +12,7 @@ class AuthController extends Controller
     public function login(Request $request)
     {
 
-        $credentials = $request->only('email', 'password');
+        $credentials = $request->only('username', 'password');
 
         // SIGN IN USING JWT AND GUARD 'API'
         if (! $token = auth('api')->attempt($credentials)) {
